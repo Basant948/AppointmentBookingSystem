@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="BookingSystem.Application/BookingSystem.Application.csproj" />
+  <Project Path="BookingSystem.Domain/BookingSystem.Domain.csproj" />
+  <Project Path="BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj" />
+  <Project Path="BookingSystem.Web/BookingSystem.Web.csproj" />
+</Solution>
