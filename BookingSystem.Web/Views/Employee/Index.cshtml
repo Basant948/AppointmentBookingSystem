@@ -1,0 +1,39 @@
+﻿@model List<BookingSystem.Web.ViewModels.EmployeeListVm>
+
+<h2>Employees</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+<a asp-action="CreateEmployee" class="btn btn-success mb-3">Create Employee</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.Name</td>
+                <td>@employee.Email</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@employee.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="ChangePassword" asp-route-id="@employee.Id" class="btn btn-warning btn-sm">Change Password</a>
+                    <form asp-action="Delete" asp-route-id="@employee.Id" method="post" style="display:inline"
+                          onsubmit="return confirm('Deactivate this employee?');">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

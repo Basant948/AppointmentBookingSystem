@@ -1,4 +1,5 @@
-﻿using BookingSystem.Infrastructure.Identity;
+﻿using BookingSystem.Domain.Entities;
+using BookingSystem.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -14,5 +15,6 @@ namespace BookingSystem.Infrastructure.Data
         {
             
         }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
