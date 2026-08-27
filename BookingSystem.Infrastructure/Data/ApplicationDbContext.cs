@@ -16,5 +16,6 @@ namespace BookingSystem.Infrastructure.Data
             
         }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Service> Services { get; set; }
     }
 }
